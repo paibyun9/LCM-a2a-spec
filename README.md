@@ -32,3 +32,8 @@ make registration-test
 This repository is the **only official entry point** for external Agents integrating with LCM.  
 All A2A onboarding, validation, and integration guidance **must refer to this repository**.
 
+## Trial placement
+Trial is the same registration flow, but with the lightest required fields.
+Use plan="trial" and only provide the Trial-minimum required properties; all other fields may be omitted.
+Validation still uses the same schema; differences are enforced via plan-based required rules.
+
