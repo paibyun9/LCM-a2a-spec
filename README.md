@@ -26,3 +26,9 @@ make registration-test
 3. **Record (The Ledger)**  
    The schema version used for registration is permanently recorded for audit and compatibility.
 
+
+## External Access
+
+This repository is the **only official entry point** for external Agents integrating with LCM.  
+All A2A onboarding, validation, and integration guidance **must refer to this repository**.
+
