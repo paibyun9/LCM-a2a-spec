@@ -12,3 +12,17 @@ This repo is the single source of truth for external Agent developers integratin
 From repo root:
 
 make registration-test
+
+## Registration Flow (3 steps)
+
+1. **Validate (The Gatekeeper)**  
+   Incoming registration JSON is strictly validated against `a2a_registration.schema.json`.  
+   Any mismatch returns **422 Unprocessable Entity** with precise error details.
+
+2. **Issue Key (The Passport)**  
+   On successful validation, partner metadata is stored and a unique `lcm_api_key` is issued.  
+   The key is shown **only once at creation time**.
+
+3. **Record (The Ledger)**  
+   The schema version used for registration is permanently recorded for audit and compatibility.
+
