@@ -37,3 +37,11 @@ Trial is the same registration flow, but with the lightest required fields.
 Use plan="trial" and only provide the Trial-minimum required properties; all other fields may be omitted.
 Validation still uses the same schema; differences are enforced via plan-based required rules.
 
+
+## Policy Enforcement (OPA)
+
+OPA policies are **not** evaluated during registration.
+They are enforced **on every API call after registration**, using the issued `lcm_api_key`.
+
+Registration validates structure and intent.
+OPA validates **runtime behavior, safety, and execution conditions** per request.
