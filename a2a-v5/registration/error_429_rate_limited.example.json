@@ -1,0 +1,16 @@
+{
+  "error": {
+    "status": 429,
+    "code": "RATE_LIMITED",
+    "message": "rate limit exceeded (too many requests)",
+    "details": [
+      {
+        "path": "headers.authorization",
+        "keyword": "required",
+        "message": "Authorization header must be present"
+      }
+    ],
+    "request_id": "req_demo_0002",
+    "doc_url": "https://github.com/paibyun9/LCM-a2a-spec"
+  }
+}

@@ -50,3 +50,5 @@ They are enforced **on every API call after registration**, using the issued `lc
 
 Registration validates structure and intent.
 OPA validates **runtime behavior, safety, and execution conditions** per request.
+
+- 429 (Rate limited): a2a-v5/registration/error_429_rate_limited.example.json
