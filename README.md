@@ -8,6 +8,10 @@
 This repo is the single source of truth for external Agent developers integrating with LCM.
 
 ## What to use
+
+## Error Catalog (machine-readable)
+LCM always returns a machine-readable JSON error body for failed requests.
+This repo contains the canonical error response schema + examples (401/422/429).
 - Schema: `a2a-v5/registration/a2a_registration.schema.json`
 - Examples:
   - PASS: `registration_trial.pass.json`, `registration_pro.pass.json`, `registration_partner.pass.json`
