@@ -1,0 +1,12 @@
+{
+  "error": {
+    "status": 401,
+    "code": "INVALID_API_KEY",
+    "message": "Missing or invalid lcm_api_key.",
+    "details": [
+      { "path": "headers.authorization", "keyword": "required", "message": "Authorization header must be present" }
+    ],
+    "request_id": "req_demo_0002",
+    "doc_url": "https://github.com/paibyun9/LCM-a2a-spec"
+  }
+}
