@@ -1,0 +1,16 @@
+{
+  "error": {
+    "status": 422,
+    "code": "SCHEMA_MISMATCH",
+    "message": "Registration payload does not match schema.",
+    "details": [
+      {
+        "path": "",
+        "keyword": "required",
+        "message": "must have required property 'org_name'"
+      }
+    ],
+    "request_id": "req_demo_0001",
+    "doc_url": "https://github.com/paibyun9/LCM-a2a-spec"
+  }
+}
