@@ -1,0 +1,25 @@
+{
+  "schema_version": "v1",
+  "partner_id": "paibyun9_partner_x",
+  "plan": "partner",
+
+  "app_name": "LCM Partner App",
+  "contact_email": "ops@partner.example",
+  "use_case": "refund/cancel automation",
+
+  "callback_url": "https://partner.example/callback",
+  "expected_rps": 10,
+  "data_sensitivity": "high",
+  "integration_type": "api",
+
+  "security_contact": "security@partner.example",
+  "incident_channel": "#incidents",
+
+  "human_escalation": { "enabled": true, "channel": "#ops-escalation" },
+  "rate_limit_overrides": { "rps": 20, "burst": 40, "daily_quota": 100000 },
+  "metadata": { "primary_language": "ko", "primary_industry": "commerce", "notes": "this must fail because org_name is missing" },
+
+  "created_at": "2025-12-29T10:00:00Z",
+  "updated_at": "2025-12-29T10:00:00Z",
+  "status": "active"
+}

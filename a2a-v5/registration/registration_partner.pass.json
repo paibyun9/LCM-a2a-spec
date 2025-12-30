@@ -1,0 +1,38 @@
+{
+  "schema_version": "v1",
+  "partner_id": "paibyun9.partner",
+  "plan": "partner",
+  "app_name": "LCM Partner App",
+  "contact_email": "ops@partner.example",
+  "use_case": "Enterprise refund/cancel orchestration via LCM",
+
+  "callback_url": "https://partner.example/lcm/callback",
+  "expected_rps": 25,
+  "data_sensitivity": "high",
+  "integration_type": "api",
+
+  "org_name": "Paibyun9 Corp",
+  "security_contact": "security@partner.example",
+  "incident_channel": "#partner-incidents",
+
+  "human_escalation": {
+    "enabled": true,
+    "channel": "#partner-ops-escalation"
+  },
+
+  "rate_limit_overrides": {
+    "rps": 50,
+    "burst": 100,
+    "daily_quota": 200000
+  },
+
+  "metadata": {
+    "primary_language": "ko",
+    "primary_industry": "commerce",
+    "notes": "partner pass sample"
+  },
+
+  "created_at": "2025-12-29T18:30:00Z",
+  "updated_at": "2025-12-29T18:30:00Z",
+  "status": "active"
+}

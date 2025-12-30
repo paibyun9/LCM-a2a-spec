@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LCM Partner Registration (v1)",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "schema_version",
+    "partner_id",
+    "plan",
+    "app_name",
+    "contact_email",
+    "use_case",
+    "expected_rps",
+    "data_sensitivity",
+    "integration_type",
+    "human_escalation",
+    "rate_limit_overrides",
+    "metadata",
+    "created_at",
+    "updated_at",
+    "status"
+  ],
+
+  "properties": {
+    "schema_version": { "type": "string", "const": "v1" },
+    "partner_id": { "type": "string", "minLength": 1 },
+    "plan": { "type": "string", "enum": ["trial", "pro", "partner"] },
+
+    "app_name": { "type": "string", "minLength": 1 },
+    "contact_email": { "type": "string", "minLength": 3 },
+    "use_case": { "type": "string", "minLength": 1, "maxLength": 240 },
+
+    "callback_url": { "type": ["string", "null"] },
+    "expected_rps": { "type": "number", "minimum": 0 },
+
+    "data_sensitivity": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "unknown"]
+    },
+    "integration_type": {
+      "type": "string",
+      "enum": ["sdk", "api", "webhook", "unknown"]
+    },
+
+    "org_name": { "type": ["string", "null"] },
+    "security_contact": { "type": ["string", "null"] },
+    "incident_channel": { "type": ["string", "null"] },
+
+    "human_escalation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "channel"],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "channel": { "type": ["string", "null"] }
+      }
+    },
+
+    "rate_limit_overrides": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rps", "burst", "daily_quota"],
+      "properties": {
+        "rps": { "type": ["number", "null"], "minimum": 0 },
+        "burst": { "type": ["number", "null"], "minimum": 0 },
+        "daily_quota": { "type": ["number", "null"], "minimum": 0 }
+      }
+    },
+
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary_language", "primary_industry", "notes"],
+      "properties": {
+        "primary_language": { "type": ["string", "null"] },
+        "primary_industry": { "type": ["string", "null"] },
+        "notes": { "type": ["string", "null"] }
+      }
+    },
+
+    "created_at": { "type": "string" },
+    "updated_at": { "type": "string" },
+    "status": { "type": "string", "enum": ["active", "suspended"] }
+  },
+
+  "allOf": [
+    {
+      "if": { "properties": { "plan": { "const": "trial" } } },
+      "then": {
+        "required": ["partner_id", "app_name", "contact_email", "use_case"]
+      }
+    },
+    {
+      "if": { "properties": { "plan": { "const": "pro" } } },
+      "then": {
+        "required": ["callback_url"]
+      }
+    },
+    {
+      "if": { "properties": { "plan": { "const": "partner" } } },
+      "then": {
+        "required": ["callback_url", "org_name", "security_contact", "incident_channel"]
+      }
+    }
+  ]
+}
