@@ -56,3 +56,11 @@ Registration validates structure and intent.
 OPA validates **runtime behavior, safety, and execution conditions** per request.
 
 - 429 (Rate limited): a2a-v5/registration/error_429_rate_limited.example.json
+
+
+## Rate limit semantics
+
+- Rate limits are enforced per API key.
+- For Trial plan: **maximum 4 successful requests per 10s window**.
+- **The 5th request within the window is blocked** with HTTP 429.
+- Response includes `retry_after_ms`, `window_ms`, and `max` for deterministic retry.
