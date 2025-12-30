@@ -1,5 +1,10 @@
 # LCM A2A Spec (SSOT)
 
+**External entry point:** https://github.com/paibyun9/LCM-a2a-spec
+**Do not use any other repo links for A2A integration docs.**
+
+# LCM A2A Spec (SSOT)
+
 This repo is the single source of truth for external Agent developers integrating with LCM.
 
 ## What to use
