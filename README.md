@@ -64,3 +64,15 @@ OPA validates **runtime behavior, safety, and execution conditions** per request
 - For Trial plan: **maximum 4 successful requests per 10s window**.
 - **The 5th request within the window is blocked** with HTTP 429.
 - Response includes `retry_after_ms`, `window_ms`, and `max` for deterministic retry.
+
+## Plan-based rate limits
+
+| Plan     | Window        | Max Success | Blocked At | Notes |
+|----------|---------------|-------------|------------|-------|
+| Trial    | 10 seconds    | 4           | 5th call   | Strict limit for safe onboarding |
+| Pro      | 10 seconds    | 20          | 21st call  | Suitable for active development |
+| Partner  | Configurable  | SLA-based   | Policy     | Defined by contract & OPA |
+
+- Limits are enforced **per API key**.
+- When blocked, LCM returns **HTTP 429** with `retry_after_ms`.
+- Rate limits are deterministic and safe to client-side retry.
