@@ -163,3 +163,11 @@ document are to be interpreted as described in RFC 2119.
 - When exceeded, LCM **MUST** return **HTTP 429** with deterministic retry metadata.
 
 Any implementation that does not follow the above rules is **Non-LCM-compatible**.
+
+## Copy-paste summary (for partner docs)
+
+- **All A2A registration payloads MUST conform to the LCM schema**:
+  https://github.com/paibyun9/LCM-a2a-spec/tree/main/a2a-v5/registration
+- **Any deviation in schema, error shape, or flow is Non-LCM-compatible**.
+- **Clients MAY validate locally using `make registration-test` before sending requests**.
+
