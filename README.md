@@ -60,3 +60,7 @@ Any implementation violating the above **must not claim LCM compatibility**.
 ## Validate locally (no install)
 From repo root:
 - `make registration-test`
+
+
+## Partner contract (canonical)
+- docs/LCM-A2A-Partner-Contract.md
