@@ -209,3 +209,15 @@ https://github.com/paibyun9/LCM-a2a-spec
 
 ---
 
+
+## Badge (LCM-compatible)
+
+Use this badge **only if** your implementation fully conforms to the LCM schema + errors + flow.
+
+### Markdown
+```md
+![LCM-compatible](assets/badges/LCM-compatible.svg)
+HTML
+html
+Copy code
+<img alt="LCM-compatible" src="assets/badges/LCM-compatible.svg" />
