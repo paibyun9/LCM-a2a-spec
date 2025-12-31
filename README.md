@@ -1,94 +1,62 @@
 # LCM A2A Spec (SSOT)
 
-**External entry point:** https://github.com/paibyun9/LCM-a2a-spec
-**Do not use any other repo links for A2A integration docs.**
+This repo is the **single source of truth** for external Agent developers integrating with LCM.
 
-# LCM A2A Spec (SSOT)
+## Canonical entry points (link these)
+- **README (this page):** contract overview + anchors for partners
+- **Registration schema:** `a2a-v5/registration/a2a_registration.schema.json`
+- **Error response schema:** `a2a-v5/registration/error_response.schema.json`
+- **Spec checklist:** `a2a-v5/registration/CHECKLIST.md`
 
-This repo is the single source of truth for external Agent developers integrating with LCM.
+## Versioning
+- Current registration schema version: **v1**
+- Compatibility is defined by **exact schema conformance** + **documented error contract**.
 
-## What to use
+## Registration flow (3 steps)
+1) **Validate (Gatekeeper)**: payload must match schema or return **HTTP 422** with exact mismatch details  
+2) **Issue key (Passport)**: key is issued once; store **hash only**; authorize via `Authorization: Bearer <key>`  
+3) **Record (Ledger)**: permanently record `schema_version` used for registration
 
-## Error Catalog (machine-readable)
-LCM always returns a machine-readable JSON error body for failed requests.
-This repo contains the canonical error response schema + examples (401/422/429).
-- Schema: `a2a-v5/registration/a2a_registration.schema.json`
-- Examples:
-  - PASS: `registration_trial.pass.json`, `registration_pro.pass.json`, `registration_partner.pass.json`
-  - FAIL (expected): `registration_partner.fail.json`
+## Trial / Pro / Partner
+All plans use the **same schema**. Plan differences are enforced via **plan-based required rules** and defaults.
 
-## Validate locally (no install)
-From repo root:
+## Schemas
+- Registration: `a2a-v5/registration/a2a_registration.schema.json`
+- Error response envelope: `a2a-v5/registration/error_response.schema.json`
 
-make registration-test
+## Examples
+### Registration
+- PASS: `a2a-v5/registration/registration_trial.pass.json`
+- PASS: `a2a-v5/registration/registration_pro.pass.json`
+- PASS: `a2a-v5/registration/registration_partner.pass.json`
+- FAIL (expected): `a2a-v5/registration/registration_partner.fail.json`
 
-## Registration Flow (3 steps)
+### Errors (machine-readable contract)
+- 422 schema mismatch: `a2a-v5/registration/error_422_schema_mismatch.example.json`
+- 401 invalid API key: `a2a-v5/registration/error_401_invalid_key.example.json`
+- 429 rate limited: `a2a-v5/registration/error_429_rate_limited.example.json`
 
-1. **Validate (The Gatekeeper)**  
-   Incoming registration JSON is strictly validated against `a2a_registration.schema.json`.  
-   Any mismatch returns **422 Unprocessable Entity** with precise error details.
-
-2. **Issue Key (The Passport)**  
-   On successful validation, partner metadata is stored and a unique `lcm_api_key` is issued.  
-   The key is shown **only once at creation time**.
-
-3. **Record (The Ledger)**  
-   The schema version used for registration is permanently recorded for audit and compatibility.
-
-
-## External Access
-
-This repository is the **only official entry point** for external Agents integrating with LCM.  
-All A2A onboarding, validation, and integration guidance **must refer to this repository**.
-
-## Trial placement
-Trial is the same registration flow, but with the lightest required fields.
-Use plan="trial" and only provide the Trial-minimum required properties; all other fields may be omitted.
-Validation still uses the same schema; differences are enforced via plan-based required rules.
-
-
-## Policy Enforcement (OPA)
-
-OPA policies are **not** evaluated during registration.
-They are enforced **on every API call after registration**, using the issued `lcm_api_key`.
-
-Registration validates structure and intent.
-OPA validates **runtime behavior, safety, and execution conditions** per request.
-
-- 429 (Rate limited): a2a-v5/registration/error_429_rate_limited.example.json
-
-
-## Rate limit semantics
-
-- Rate limits are enforced per API key.
-- For Trial plan: **maximum 4 successful requests per 10s window**.
-- **The 5th request within the window is blocked** with HTTP 429.
-- Response includes `retry_after_ms`, `window_ms`, and `max` for deterministic retry.
-
-## Plan-based rate limits
-
-| Plan     | Window        | Max Success | Blocked At | Notes |
-|----------|---------------|-------------|------------|-------|
-| Trial    | 10 seconds    | 4           | 5th call   | Strict limit for safe onboarding |
-| Pro      | 10 seconds    | 20          | 21st call  | Suitable for active development |
-| Partner  | Configurable  | SLA-based   | Policy     | Defined by contract & OPA |
-
+## Rate limits
 - Limits are enforced **per API key**.
 - When blocked, LCM returns **HTTP 429** with `retry_after_ms`.
 - Rate limits are deterministic and safe to client-side retry.
 
-
-## Spec checklist
-See: a2a-v5/registration/CHECKLIST.md
-
+### Plan table (defaults)
+| Plan    | Window | Max OK in window | Blocked request | Result |
+|---------|--------|------------------|-----------------|--------|
+| Trial   | 10s    | 4                | 5th             | 429    |
+| Pro     | 10s    | (documented later) | (documented later) | 429 |
+| Partner | 10s    | (documented later) | (documented later) | 429 |
 
 ## Non-LCM-compatible implementations
-
 The following are **explicitly NOT LCM-compatible**:
-
-- Payloads that do not fully conform to `a2a_registration.schema.json`.
-- Missing or extra fields outside the schema contract.
-- Error responses that do not match the documented error schemas (422, 401, 429).
-- Undocumented retry, rate-limit, or authorization behavior.
+- Payloads that do not fully conform to `a2a_registration.schema.json`
+- Missing/extra fields outside the schema contract
+- Error responses that do not match documented error schemas (422, 401, 429)
+- Undocumented retry, rate-limit, or authorization behavior
 
 Any implementation violating the above **must not claim LCM compatibility**.
+
+## Validate locally (no install)
+From repo root:
+- `make registration-test`
