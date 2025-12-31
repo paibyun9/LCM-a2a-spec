@@ -221,3 +221,24 @@ HTML
 html
 Copy code
 <img alt="LCM-compatible" src="assets/badges/LCM-compatible.svg" />
+
+
+## LCM-compatible (Verified)
+
+**LCM-compatible (Verified)** is a stronger designation than LCM-compatible.
+
+An implementation MAY claim **LCM-compatible** if it follows the public schema, errors, and flow.
+An implementation MUST be designated **LCM-compatible (Verified)** only if:
+- It has been validated against the official LCM test suite, and
+- A verification token or confirmation has been issued by LCM.
+
+Unverified self-claims MUST NOT use the Verified badge.
+
+### Verified badge usage
+
+```md
+![LCM-compatible (Verified)](https://raw.githubusercontent.com/paibyun9/LCM-a2a-spec/main/assets/badges/LCM-compatible-verified.svg)
+Non-verified usage (allowed)
+md
+Copy code
+Compatible with LCM A2A registration schema v1
