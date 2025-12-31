@@ -137,3 +137,29 @@ Expected:
 200 → valid key
 
 401 → invalid key
+
+## Normative Language (Binding Rules)
+
+The key words **MUST**, **MUST NOT**, **REQUIRED**, **SHALL**, **SHALL NOT**,  
+**SHOULD**, **SHOULD NOT**, **RECOMMENDED**, **MAY**, and **OPTIONAL** in this
+document are to be interpreted as described in RFC 2119.
+
+### Registration
+- A registration payload **MUST** conform exactly to the published JSON Schema.
+- Any deviation **MUST** be rejected with **HTTP 422** and a machine-readable error.
+- Successful registration **MUST** issue an API key exactly once.
+
+### API Key (Passport)
+- LCM **MUST NOT** store raw API keys.
+- Only `api_key_hash` **MUST** be stored server-side.
+- Clients **MUST** treat the API key as a secret credential.
+
+### Authorization
+- Requests **MUST** present the API key via `Authorization: Bearer <key>`.
+- Invalid or missing keys **MUST** result in **HTTP 401**.
+
+### Rate Limits
+- Rate limits **MUST** be enforced per API key.
+- When exceeded, LCM **MUST** return **HTTP 429** with deterministic retry metadata.
+
+Any implementation that does not follow the above rules is **Non-LCM-compatible**.
