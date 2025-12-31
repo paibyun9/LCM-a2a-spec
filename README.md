@@ -80,3 +80,15 @@ OPA validates **runtime behavior, safety, and execution conditions** per request
 
 ## Spec checklist
 See: a2a-v5/registration/CHECKLIST.md
+
+
+## Non-LCM-compatible implementations
+
+The following are **explicitly NOT LCM-compatible**:
+
+- Payloads that do not fully conform to `a2a_registration.schema.json`.
+- Missing or extra fields outside the schema contract.
+- Error responses that do not match the documented error schemas (422, 401, 429).
+- Undocumented retry, rate-limit, or authorization behavior.
+
+Any implementation violating the above **must not claim LCM compatibility**.
