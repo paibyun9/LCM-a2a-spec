@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "api_key_fingerprint": "ab9564121801b791",
+  "allow": false,
+  "deny_reasons": [
+    "confidence 0.55 below threshold 0.70",
+    "final gate not satisfied (EXECUTION_BLOCK)"
+  ],
+  "latency_ms": 5
+}

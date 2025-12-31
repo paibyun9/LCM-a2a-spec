@@ -244,3 +244,8 @@ Non-verified usage (allowed)
 md
 Copy code
 Compatible with LCM A2A registration schema v1
+
+## Policy Eval (Decision API)
+
+- Endpoint contract: **POST /a2a/eval** returns a decision payload that MUST conform to `a2a-v5/eval/a2a_eval_response.schema.json`.
+- Examples: `a2a-v5/eval/a2a_eval_allow.example.json` (allow) and `a2a-v5/eval/a2a_eval_deny.example.json` (deny).

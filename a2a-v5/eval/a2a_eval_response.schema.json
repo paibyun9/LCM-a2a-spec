@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LCM A2A Eval Response",
+  "type": "object",
+  "required": ["ok", "api_key_fingerprint", "allow", "deny_reasons", "latency_ms"],
+  "properties": {
+    "ok": { "type": "boolean", "const": true },
+    "api_key_fingerprint": { "type": "string", "minLength": 8, "maxLength": 64 },
+    "allow": { "type": "boolean" },
+    "deny_reasons": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "latency_ms": { "type": "integer", "minimum": 0 }
+  },
+  "additionalProperties": false
+}
