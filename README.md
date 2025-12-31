@@ -1,3 +1,5 @@
+![LCM-compatible (Verified)](https://raw.githubusercontent.com/paibyun9/LCM-a2a-spec/main/assets/badges/LCM-compatible-verified.svg)
+
 ## Official entry points (link these)
 - **Partner Contract (canonical):** docs/LCM-A2A-Partner-Contract.md
 - **Registration Schema (SSOT):** a2a-v5/registration/a2a_registration.schema.json
