@@ -179,3 +179,33 @@ Any implementation that does not follow the above rules is **Non-LCM-compatible*
 Canonical spec:
 https://github.com/paibyun9/LCM-a2a-spec/tree/main/a2a-v5/registration
 
+
+---
+
+## LCM-compatible (official term)
+
+**LCM-compatible** means an implementation that **fully conforms** to all of the following:
+
+1. The official LCM A2A JSON Schema (registration payload)
+2. The official LCM error contracts (422, 401, 429, etc.)
+3. The official LCM registration and authorization flow
+
+Any implementation that deviates from **any** of the above is **Non-LCM-compatible**.
+
+### Normative statement
+
+> An implementation **MUST** be LCM-compatible to be considered compliant with the LCM A2A protocol.
+
+### Badge usage (recommended)
+
+Partners and platforms MAY describe their integration as:
+
+> **“LCM-compatible”**
+
+only if all compatibility requirements are met.
+
+Canonical definition:
+https://github.com/paibyun9/LCM-a2a-spec
+
+---
+
