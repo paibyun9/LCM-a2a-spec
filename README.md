@@ -76,3 +76,7 @@ OPA validates **runtime behavior, safety, and execution conditions** per request
 - Limits are enforced **per API key**.
 - When blocked, LCM returns **HTTP 429** with `retry_after_ms`.
 - Rate limits are deterministic and safe to client-side retry.
+
+
+## Spec checklist
+See: a2a-v5/registration/CHECKLIST.md
