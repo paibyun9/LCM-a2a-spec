@@ -102,3 +102,10 @@ See: docs/LCM-A2A-Partner-Contract.md
 
 ## Error Catalog
 See: a2a-v5/registration/error_response.schema.json
+
+## Copy-paste links (for partners)
+- Partner Contract: https://github.com/paibyun9/LCM-a2a-spec/blob/main/docs/LCM-A2A-Partner-Contract.md
+- Registration Schema (SSOT): https://github.com/paibyun9/LCM-a2a-spec/blob/main/a2a-v5/registration/a2a_registration.schema.json
+- Examples (PASS/FAIL): https://github.com/paibyun9/LCM-a2a-spec/tree/main/a2a-v5/registration
+- Error Contract: https://github.com/paibyun9/LCM-a2a-spec/blob/main/a2a-v5/registration/error_response.schema.json
+- README Anchors (stable): https://github.com/paibyun9/LCM-a2a-spec#anchors-stable-references
