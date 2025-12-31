@@ -1,3 +1,17 @@
+## Official entry points (link these)
+- **Partner Contract (canonical):** docs/LCM-A2A-Partner-Contract.md
+- **Registration Schema (SSOT):** a2a-v5/registration/a2a_registration.schema.json
+- **Examples (PASS/FAIL):** a2a-v5/registration/
+- **Error Contract (machine-readable):** a2a-v5/registration/error_response.schema.json
+
+## Anchors (stable references)
+- [Registration Schema](#registration-schema)
+- [Registration Flow](#registration-flow)
+- [Key Semantics](#key-semantics)
+- [OPA Enforcement](#opa-enforcement)
+- [Rate Limits](#rate-limits)
+- [Error Catalog](#error-catalog)
+- [Non-LCM-compatible](#non-lcm-compatible)
 # LCM A2A Spec (SSOT)
 
 This repo is the **single source of truth** for external Agent developers integrating with LCM.
@@ -64,3 +78,27 @@ From repo root:
 
 ## Partner contract (canonical)
 - docs/LCM-A2A-Partner-Contract.md
+
+
+## Registration Schema
+See: a2a-v5/registration/a2a_registration.schema.json
+
+
+## Registration Flow
+See: docs/LCM-A2A-Partner-Contract.md
+
+
+## Key Semantics
+See: docs/LCM-A2A-Partner-Contract.md
+
+
+## OPA Enforcement
+OPA is enforced post-registration, per call.
+
+
+## Rate Limits
+See: docs/LCM-A2A-Partner-Contract.md
+
+
+## Error Catalog
+See: a2a-v5/registration/error_response.schema.json
