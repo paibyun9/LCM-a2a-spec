@@ -109,3 +109,31 @@ See: a2a-v5/registration/error_response.schema.json
 - Examples (PASS/FAIL): https://github.com/paibyun9/LCM-a2a-spec/tree/main/a2a-v5/registration
 - Error Contract: https://github.com/paibyun9/LCM-a2a-spec/blob/main/a2a-v5/registration/error_response.schema.json
 - README Anchors (stable): https://github.com/paibyun9/LCM-a2a-spec#anchors-stable-references
+
+## Quickstart (3 curls)
+
+### 1) Register (valid → 201)
+```bash
+curl -X POST https://api.lcm.ai/a2a/register \
+  -H 'content-type: application/json' \
+  -d @a2a-v5/registration/registration_trial.pass.json
+2) Register (invalid → 422)
+bash
+Copy code
+curl -X POST https://api.lcm.ai/a2a/register \
+  -H 'content-type: application/json' \
+  -d @a2a-v5/registration/registration_partner.fail.json
+3) Verify API key (200 / 401)
+bash
+Copy code
+curl -X GET https://api.lcm.ai/a2a/keys/verify \
+  -H "authorization: Bearer <LCM_API_KEY>"
+Expected:
+
+201 → registration accepted
+
+422 → schema mismatch (with exact error path)
+
+200 → valid key
+
+401 → invalid key
