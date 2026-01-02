@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LCM A2A Eval Response (V5.1) — Policy Link Enforced",
+  "type": "object",
+  "required": [
+    "ok",
+    "api_key_fingerprint",
+    "allow",
+    "deny_reasons",
+    "latency_ms",
+    "policy",
+    "proof"
+  ],
+  "properties": {
+    "ok": { "type": "boolean", "const": true },
+    "api_key_fingerprint": { "type": "string", "minLength": 8, "maxLength": 64 },
+    "allow": { "type": "boolean" },
+    "deny_reasons": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "latency_ms": { "type": "integer", "minimum": 0 },
+
+    "policy": {
+      "type": "object",
+      "required": ["policy_set_id", "policy_set_version"],
+      "properties": {
+        "policy_set_id": { "type": "string", "minLength": 3 },
+        "policy_set_version": { "type": "string", "minLength": 3 }
+      },
+      "additionalProperties": false
+    },
+
+    "proof": {
+      "type": "object",
+      "required": ["trust_level", "policy_ref_id", "checks", "references", "limitations"],
+      "properties": {
+        "trust_level": {
+          "type": "string",
+          "enum": ["verified", "supported", "unverified"]
+        },
+        "policy_ref_id": {
+          "type": "string",
+          "minLength": 3,
+          "description": "MUST match policy.policy_set_id (enforced by test)"
+        },
+        "checks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["check_id", "status"],
+            "properties": {
+              "check_id": { "type": "string", "minLength": 3 },
+              "status": { "type": "string", "enum": ["pass", "fail", "skip"] },
+              "message": { "type": "string" }
+            },
+            "additionalProperties": false
+          }
+        },
+        "references": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["type", "ref_id"],
+            "properties": {
+              "type": { "type": "string", "enum": ["policy", "evidence", "log", "doc"] },
+              "ref_id": { "type": "string", "minLength": 3 },
+              "uri": { "type": ["string", "null"] }
+            },
+            "additionalProperties": false
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

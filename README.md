@@ -249,3 +249,14 @@ Compatible with LCM A2A registration schema v1
 
 - Endpoint contract: **POST /a2a/eval** returns a decision payload that MUST conform to `a2a-v5/eval/a2a_eval_response.schema.json`.
 - Examples: `a2a-v5/eval/a2a_eval_allow.example.json` (allow) and `a2a-v5/eval/a2a_eval_deny.example.json` (deny).
+
+## Policy Link Enforcement (V5.1)
+
+For partner-safe decisions, every eval response MUST be traceable to an explicit policy set.
+
+- V5.1 schema: `a2a-v5.1/eval/a2a_eval_response_v5_1.schema.json`
+- Requirements:
+  - Response MUST include `policy.policy_set_id` and `policy.policy_set_version`
+  - Response MUST include `proof.policy_ref_id` and it MUST match `policy.policy_set_id` (enforced by tests)
+  - `proof.references` MUST include at least one `{type:"policy", ref_id:<policy_set_id>}` (enforced by tests)
+- Test: `make eval-v5_1-test`

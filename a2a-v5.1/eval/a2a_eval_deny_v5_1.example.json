@@ -1,0 +1,26 @@
+{
+  "ok": true,
+  "api_key_fingerprint": "ab9564121801b791",
+  "allow": false,
+  "deny_reasons": [
+    "confidence 0.55 below threshold 0.70",
+    "final gate not satisfied (EXECUTION_BLOCK)"
+  ],
+  "latency_ms": 5,
+  "policy": {
+    "policy_set_id": "policy:lcm.market.v1",
+    "policy_set_version": "2026-01-01"
+  },
+  "proof": {
+    "trust_level": "supported",
+    "policy_ref_id": "policy:lcm.market.v1",
+    "checks": [
+      { "check_id": "policy.link.enforced", "status": "pass", "message": "Decision linked to explicit policy set" },
+      { "check_id": "policy.rule.match", "status": "fail", "message": "Policy rule not satisfied" }
+    ],
+    "references": [
+      { "type": "policy", "ref_id": "policy:lcm.market.v1", "uri": null }
+    ],
+    "limitations": ["Evidence verification not available in V5.1 example."]
+  }
+}
