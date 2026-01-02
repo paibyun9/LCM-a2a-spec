@@ -146,6 +146,16 @@ The key words **MUST**, **MUST NOT**, **REQUIRED**, **SHALL**, **SHALL NOT**,
 **SHOULD**, **SHOULD NOT**, **RECOMMENDED**, **MAY**, and **OPTIONAL** in this
 document are to be interpreted as described in RFC 2119.
 
+## Legal & Responsibility Boundary (Normative)
+
+- The Eval response is a structured policy decision signal and **does not constitute legal advice**, certification, or a guarantee of outcomes.
+- Partners are solely responsible for **downstream interpretation**, regulatory compliance, and any actions taken based on the decision.
+- LCM’s decision is **strictly bounded** by the declared `policy_set_id` and `policy_set_version`; any use beyond this scope is out of contract.
+
+## Internal Norm (OpenAI / Partner Reference)
+
+**An LCM decision is valid only if it is contractually traceable to an explicit policy set (id + version); otherwise, the agent MUST treat it as unverified and abstain or deny.** 
+
 ### Registration
 - A registration payload **MUST** conform exactly to the published JSON Schema.
 - Any deviation **MUST** be rejected with **HTTP 422** and a machine-readable error.
