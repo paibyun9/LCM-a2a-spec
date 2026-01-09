@@ -1,167 +1,173 @@
-LCM — Decision-Time Separated Proof System
+# LCM — Decision-Time Separated Proof System
 
-Architecture Epoch: V5 — Decision-Time Split (Gate / Ledger) [LOCKED]
-Proof. Not Promise.
+> **Architecture Epoch: V5 — Decision-Time Split (Gate / Ledger) [LOCKED]**  
+> Routes: `/a2a/pre/*` = Gate, `/a2a/post/*` = Ledger  
+> Schemas: Pre = `CanonicalDecision`, Post = `LedgerDecision`  
+> Rule: ambiguous code = ❌ delete
 
-LCM is not a feature.
-It is a decision-time–separated proof system that enables AI systems to act responsibly, verifiably, and at scale.
+---
 
-This repository provides a live, externally verifiable demo of the LCM architecture.
+LCM defines a hard boundary between **making a decision** and **proving that decision**.
 
-🔑 Core Idea (Why LCM)
+This repository exposes a **live, externally verifiable implementation**
+of that architecture.
 
-Decision ≠ Result
+---
 
-Every automated decision must ship with proof, not just an outcome.
+## Step 1. Server Run (Health)
 
-LCM enforces this by splitting decision time into two explicit phases:
+### Live (AWS)
 
-Pre (Gate) — Can this decision be made?
+```bash
+curl -i http://18.118.171.174/health
+Expected:
 
-Post (Ledger) — Can this decision be proven, audited, and explained?
+json
+Copy code
+{
+  "ok": true,
+  "system": "LCM PayAssistant",
+  "status": "alive"
+}
+This confirms:
 
-This separation is not conceptual.
-It is enforced at the API, schema, and routing level.
+Server is running
 
-🧱 Architecture (V5 — LOCKED)
-Decision-Time Split
-Phase	Route	Purpose
-Pre / Gate	/a2a/pre/*	Canonical, UI-safe decision
-Post / Ledger	/a2a/post/*	Full audit, trace, evidence
-Schemas
+Public access is enabled
 
-CanonicalDecision (Pre)
-→ Minimal, stable, UX-safe
+Health is machine-verifiable
 
-LedgerDecision (Post)
-→ Full trace, evidence, regulator-ready
+Step 2. One-line Demo (CanonicalDecision)
+Copy → Paste → Trust
 
-🚀 Live Public Demo (External)
-
-This is not a mock.
-These endpoints are live and externally accessible.
-
-1️⃣ Canonical Decision (One-Line Proof)
-
-Copy → Paste → Instant Trust
-
+bash
+Copy code
 curl -s http://18.118.171.174/a2a/eval | python3 -m json.tool
+Expected (canonical, UI-safe):
 
-
-Expected (CanonicalDecision):
-
+json
+Copy code
 {
   "decision": "allow",
   "reason_code": "EVIDENCE_HASH_MATCH"
 }
+Properties:
 
+Deterministic
 
-Stable JSON
+Stable schema
 
-UI-safe
+Safe for UI, agents, and automation
 
-Contract-first
+Step 3. Canonical vs Ledger (Decision-Time Separation)
+Canonical (Gate)
+Minimal
 
-No admin keys required
+Stable
 
-2️⃣ Browser Demo (Human-Readable)
+Externally consumable
 
+No internal detail leakage
+
+http
+Copy code
+GET /a2a/eval
+Ledger (Post) — LOCKED
+Evidence
+
+Trace
+
+Audit material
+
+Time-indexed proof
+
+h
+Copy code
+/a2a/post/*
+Ledger endpoints are structurally reserved and will be enabled
+only when proof material is immutable.
+
+Step 4. Human Verification (Browser Demo)
 Open in any browser:
 
+arduino
+Copy code
 http://18.118.171.174/demo
+This page:
 
+Calls /a2a/eval
 
-Shows /a2a/eval
+Renders canonical JSON
 
-Human-friendly
+Requires no credentials
 
-Zero setup
+Designed for:
 
-Perfect for external reviewers, investors, or auditors
+External reviewers
 
-🧪 Local Run (Optional)
+Auditors
 
-If you want to run it locally:
+Non-technical stakeholders
 
-cd lcm_proof_ux
-uvicorn main:app --reload --port 8000
+Step 5. External Verification (No Trust Required)
+All steps above can be verified by:
 
+Any machine
 
-Health check:
+Any human
 
-curl -s http://127.0.0.1:8000/ | python3 -m json.tool
+Without credentials
 
+Without prior context
 
-Expected:
+This is proof by construction, not promise.
 
-{
-  "ok": true,
-  "service": "lcm-proof-ux",
-  "version": "0.3.0"
-}
-
-🔍 Canonical vs Full Response
-Canonical (Default — UI-First)
-curl -s http://18.118.171.174/a2a/eval | python3 -m json.tool
-
-Full (Audit / Debug)
-curl -s http://18.118.171.174/a2a/eval_full | python3 -m json.tool
-
-
-✔ Same decision
-✔ Different verbosity
-✔ Same contract
-
-📜 Design Principles
-
+Design Principles
 Decision ≠ Result
-→ Every decision must carry proof
+
+Proof is not optional
 
 Canonical by default
-→ Safe for UI, agents, and automation
 
-Full on demand
-→ Auditors, regulators, forensic analysis
+Ledger by necessity
 
-OpenAPI as contract
-→ Humans and machines onboard equally
+Open verification beats internal assurance
 
-🧠 What Makes LCM Different
+CTO Checklist
+ Public endpoint reachable
 
-Most systems say:
+ Canonical decision stable
 
-“Trust us.”
+ Decision-time separation enforced
 
-LCM says:
+ Browser verification available
 
-“Verify this.”
+ External reproduction possible
 
-Proof is structural
+ No ambiguous contracts
 
-Verification is external
+📜 The LCM Manifesto
+LCM is not a feature.
+It is not an SDK.
+It is not a policy engine.
 
-Trust is earned at decision time
+It is a decision-time–separated proof system.
 
-🧾 CTO Checklist (Reality Check)
+In a world where AI systems act autonomously,
+trust is no longer granted — it must be proven.
 
- Server runs
-
- One-line external demo works
-
- Pre / Post routes separated
-
- CanonicalDecision enforced
-
- Nginx + public access verified
-
- External curl works (no VPN, no keys)
-
-🏁 Final Statement
-
-LCM is not a promise.
-It is a proof system.
-
-If an AI cannot explain why it decided,
-then it was never trustworthy to begin with.
+“If a system cannot explain why it decided, it was never safe to deploy.”
 
 Proof. Not Promise.
+Live Endpoints
+Canonical Decision:
+http://18.118.171.174/a2a/eval
+
+Browser Demo:
+http://18.118.171.174/demo
+
+Status
+SCORP LOCKED.
+This document defines the system boundary.
+Changes require a new architecture epoch.
+
