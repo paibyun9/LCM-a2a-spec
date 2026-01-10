@@ -45,7 +45,6 @@ Decision-Time Split (Hard Boundary)
 This separation is enforced by design, not convention.
 
 ---
-
 ## The Whole Picture
 
 ```mermaid
@@ -76,6 +75,7 @@ Immutable proof generation
 
 External Verification
 Third-party reproducibility
+
 
 Live Endpoints (Public)
 Canonical Decision (Demo)
