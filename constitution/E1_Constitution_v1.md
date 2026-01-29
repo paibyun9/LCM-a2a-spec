@@ -28,3 +28,81 @@ This English version is the sole authoritative and controlling text of E1-1.
 Any translations are provided for reference only and shall have no legal effect.
 
 Canonical Notes are informational only and do not modify or supplement the authoritative text.
+
+---
+
+## E1-2. Pre / Post / Gray Zone 0 Definition
+
+**Canonical Version – English (Authoritative)**
+
+All decisions within LCM are governed by a strict Pre and Post boundary, with no intermediate decision space.
+
+**Pre** refers to the state in which all applicable policies, rules, and conditions are fully defined and fixed prior to any LCM processing. All determinations of eligibility, permission, or validity originate exclusively from this Pre-defined policy state.
+
+**Post** refers to the state in which outcomes produced by the application of Pre-defined policies are delivered, recorded, or executed outside of LCM. LCM does not alter, reconsider, or intervene in outcomes once they have entered the Post state.
+
+**Gray Zone 0** means that no intermediate, discretionary, contextual, or human-judgment-based decision space exists between Pre and Post. LCM does not, and shall not, evaluate intent, fairness, hardship, special circumstances, or exceptions at any point.
+
+Any request, condition, or scenario that cannot be conclusively resolved within the Pre-defined policy state is not escalated, adjusted, or interpreted; it shall result in a deterministic outcome based solely on the applicable policy or be subject to automatic rejection.
+
+---
+
+### Canonical Notes (non-substantive)
+
+This English version is the sole authoritative and controlling text of E1-2.
+
+Any translations are provided for reference only and shall have no legal effect.
+
+Canonical Notes are informational only and do not modify or supplement the authoritative text.
+
+---
+
+## E1-2. Pre / Post / Gray Zone 0 Definition
+
+**Canonical Version – English (Authoritative)**
+
+All decisions within LCM are governed by a strict Pre and Post boundary, with no intermediate decision space.
+
+**Pre** refers to the state in which all applicable policies, rules, and conditions are fully defined and fixed prior to any LCM processing. All determinations of eligibility, permission, or validity originate exclusively from this Pre-defined policy state.
+
+**Post** refers to the state in which outcomes produced by the application of Pre-defined policies are delivered, recorded, or executed outside of LCM. LCM does not alter, reconsider, or intervene in outcomes once they have entered the Post state.
+
+**Gray Zone 0** means that no intermediate, discretionary, contextual, or human-judgment-based decision space exists between Pre and Post. LCM does not, and shall not, evaluate intent, fairness, hardship, special circumstances, or exceptions at any point.
+
+Any request, condition, or scenario that cannot be conclusively resolved within the Pre-defined policy state is not escalated, adjusted, or interpreted; it shall result in a deterministic outcome based solely on the applicable policy or be subject to automatic rejection.
+
+---
+
+### Canonical Notes (non-substantive)
+
+This English version is the sole authoritative and controlling text of E1-2.
+
+Any translations are provided for reference only and shall have no legal effect.
+
+Canonical Notes are informational only and do not modify or supplement the authoritative text.
+
+---
+
+## E1-2. Pre / Post / Gray Zone 0 Definition
+
+**Canonical Version – English (Authoritative)**
+
+All decisions within LCM are governed by a strict Pre and Post boundary, with no intermediate decision space.
+
+**Pre** refers to the state in which all applicable policies, rules, and conditions are fully defined and fixed prior to any LCM processing. All determinations of eligibility, permission, or validity originate exclusively from this Pre-defined policy state.
+
+**Post** refers to the state in which outcomes produced by the application of Pre-defined policies are delivered, recorded, or executed outside of LCM. LCM does not alter, reconsider, or intervene in outcomes once they have entered the Post state.
+
+**Gray Zone 0** means that no intermediate, discretionary, contextual, or human-judgment-based decision space exists between Pre and Post. LCM does not, and shall not, evaluate intent, fairness, hardship, special circumstances, or exceptions at any point.
+
+Any request, condition, or scenario that cannot be conclusively resolved within the Pre-defined policy state is not escalated, adjusted, or interpreted; it shall result in a deterministic outcome based solely on the applicable policy or be subject to automatic rejection.
+
+---
+
+### Canonical Notes (non-substantive)
+
+This English version is the sole authoritative and controlling text of E1-2.
+
+Any translations are provided for reference only and shall have no legal effect.
+
+Canonical Notes are informational only and do not modify or supplement the authoritative text.
