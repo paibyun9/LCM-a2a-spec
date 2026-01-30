@@ -1,138 +1,100 @@
-# LCM — Blockchain guarantees. API speed.
+# LCM — Lawful Computation Middleware
 
-LCM delivers verifiable proof at API speed.  
-Decision-time separated. Zero grey zones.
+[Constitution: v1.0 LOCKED] [Status: ACTIVE]
 
-No speculation.  
-No deferred trust.
+LCM is not a decision-making AI.  
+LCM is a deterministic execution system that applies policies exactly as written — without interpretation, discretion, or exception.
 
-In an era of autonomous AI,  
-**trust isn’t granted — it’s proven.**
+---
+
+## 🔒 What LCM Is (and Is Not)
+
+**LCM is:**
+- A constitution-driven middleware
+- A proof-generating execution engine
+- A system where outcomes are mechanically derived from policies
+
+**LCM is NOT:**
+- A judge, arbitrator, or reasoning agent
+- A probabilistic or adaptive AI
+- A system that handles exceptions, fairness, or intent
+
+---
+
+## ⚙️ Core Principles
+
+| Principle | Mechanical Reality |
+| :--- | :--- |
+| **Deterministic** | Identical inputs + identical policy = identical outcome |
+| **Gray Zone 0** | No intermediate decision space; no “pending review” |
+| **Policy Snapshot** | Outcomes are anchored to the policy effective at the moment of the event |
+| **Non-Punitive** | Suspension or revocation is a state transition, not a penalty |
+
+### Gray Zone 0 Logic
+
+Input + Policy → Outcome
+ΔJudgment = 0
+
+
+There is no “maybe,” no escalation, and no discretionary override.
+
+---
+
+## 🧭 How LCM Operates
+
+LCM enforces a strict **Pre / Post** execution model:
+
+- **Pre**: Policy validation, eligibility checks, and snapshot anchoring  
+- **Post**: Proof emission and deterministic outcome reporting  
+
+No logic exists between these phases.
+
+---
+
+## 🔑 API Access & Consent
+
+Access to LCM APIs is **not automatic**.
+
+API eligibility is granted **only after explicit consent** to the E1 Constitution.  
+Consent acts as the **trigger for a system state transition** from ineligible → eligible.
+
+Using an LCM-issued API key implies ongoing agreement to the Constitution and all governing terms.
+
+---
+
+## 📘 Authoritative Documents
+
+- **E1 Constitution (LOCKED)**  
+  `constitution/E1_Constitution_v1.md`
+
+- **E1 Annex — Locked Zones**  
+  `constitution/E1_ANNEX_Locked_Zones_v1.md`
+
+- **E2 Human Guide**  
+  `docs/E2/E2-1.md`  
+  `docs/E2/E2-2.md`  
+  `docs/E2/E2-3.md`  
+  `docs/E2/E2-4.md`  
+  `docs/E2/E2-5.md`
+
+---
+
+## 🔍 API Reference
+
+Interactive API documentation is available **only as a reference** and may be gated by eligibility state:
+
+/docs/api
+
+
+LCM does not hide its proofs.  
+It hides only the ability to execute them without consent.
+
+---
+
+## 🧠 Final Note
+
+LCM does not promise outcomes.  
+LCM produces proof.
 
 **Proof. Not Promise.**
 
-▶ **Try it now — Understand LCM in 5 minutes**  
-https://github.com/paibyun9/LCM-a2a-spec/blob/main/docs/understand-lcm-in-5-minutes.md
-
----
-
-## Core Architecture (V5 · LOCKED)
-
-Decision-Time Split (Hard Boundary)
-
-| Layer | Purpose | Route | Schema |
-|------|--------|-------|--------|
-| Gate (Pre) | Decision intent only | /a2a/pre/* | CanonicalDecision@pre |
-| Ledger (Post) | Verifiable proof | /a2a/post/* | LedgerDecision@post |
-
-**Invariant**
-- pre cannot depend on outcome evidence
-- post cannot modify intent
-- No shared mutable state
-- No “gray zone” logic
-
----
-
-## Access Levels (API Permission Model)
-
-| Tier | Access Scope | Description |
-|------|--------------|-------------|
-| Tier-1 | Pre only | Intent evaluation (no proof exposure) |
-| Tier-2 | Post only | Ledger verification / auditing |
-| Partner | Pre + Post | Full decision → proof pipeline |
-
-This separation is enforced by design, not convention.
-
----
-
-## The Whole Picture
-
-```mermaid
-graph LR
-
-    A["Agent / System"] --> B["/a2a/pre/* (Gate)"]
-    B --> C["CanonicalDecision@pre"]
-    C --> D{Decision Logic}
-    D --> E["/a2a/post/* (Ledger)"]
-    E --> F["LedgerDecision@post"]
-    F --> G["Externally Verifiable Proof"]
-```
-If you break this flow,
-you are no longer running LCM.
-
-Step Model (V5 · 5 Step · SCORP)
-Health & Liveness
-System availability and version lock
-
-Pre — Intent Only
-Deterministic decision intent
-No evidence binding
-
-Evidence Binding
-Hash, signature, reference only
-
-Post — Ledger Commit
-Immutable proof generation
-
-External Verification
-Third-party reproducibility
-
-Live Endpoints (Public)
-Canonical Decision (Demo)
-GET http://18.118.171.174/a2a/eval
-
-Browser Demo
-http://18.118.171.174/demo
-
-Interactive API (Swagger)
-http://18.118.171.174/docs
-
-/docs is the only intended human-facing API surface.
-OpenAPI JSON is internal-use only.
-
-CTO Checklist
-Deterministic decision surface
-
-Schema-first contracts
-
-Explicit pre/post separation
-
-Zero ambiguous logic
-
-Auditable by default
-
-External-shareable by default
-
-If any item fails,
-the system is not production-safe.
-
-Non-Goals (Explicit)
-LCM does not:
-
-Optimize UX flows
-
-Explain decisions in natural language
-
-Replace policy engines
-
-Hide uncertainty
-
-LCM exists to justify decisions, not decorate them.
-
-Final Note
-Stripe helps you process payments.
-LCM helps you justify decisions.
-
-When autonomous systems act,
-proof becomes infrastructure.
-
-Proof. Not Promise.
-
-README LOCK STATUS
-Version: V5
-
-Mode: SCORP
-
-Change Policy: Breaking-change only
-
-Ambiguity Tolerance: Zero
