@@ -1,8 +1,19 @@
 # E1 Constitution — v1.0 (ACTIVE)
-Status: LOCKED  
-Canonical Language: English
+
+Status: **Authoritative (LOCKED)**  
+Canonical Language: **English**  
+Last Updated: **2026-01-29**
 
 ---
+
+## Definitions
+
+- **Vendor**: An entity that registers and provides authoritative policies to LCM.
+- **User**: An individual or organization that interacts with LCM directly or indirectly.
+- **LCM**: The middleware system that relays vendor-provided policies and resulting outcomes.
+- **Event**: A transaction, request, or occurrence to which a vendor policy is applied.
+- **Policy**: A set of rules and conditions defined and maintained by a Vendor.
+
 
 ## E1-1. Single Adjudicator Declaration  
 (Vendor Policy Relay)
@@ -81,5 +92,4 @@ Any translations are provided for reference only and shall have no legal effect.
 
 Canonical Notes are informational only and do not modify or supplement the authoritative text.
 
----
 
