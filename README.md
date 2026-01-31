@@ -30,6 +30,17 @@ LCM is a deterministic execution system that applies policies exactly as written
 | **Policy Snapshot** | Outcomes are anchored to the policy effective at the moment of the event |
 | **Non-Punitive** | Suspension or revocation is a state transition, not a penalty |
 
+## Deterministic Refund Engine (E4 Preview)
+
+![LCM Refund Engine V1.0](docs/lcm-refund-engine-deterministic-v1.png)
+
+This engine demonstrates a fully deterministic,
+policy-locked execution flow with:
+- No human override
+- Time-based evaluation
+- Append-only immutable logs
+
+
 ### Gray Zone 0 Logic
 
 Input + Policy → Outcome
