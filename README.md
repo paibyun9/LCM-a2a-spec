@@ -50,6 +50,7 @@ OUTCOME
 ✔ SUCCESS
 ✖ FAILURE
 
+---
 
 **Guarantees:**
 
