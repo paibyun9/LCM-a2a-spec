@@ -30,11 +30,17 @@ INPUT
 ├─ input_hash
 ├─ policy_hash
 └─ engine_version
+
 ↓
+
 DETERMINISTIC EXECUTION
+
 ↓
+
 DERIVATION ROOT
+
 ↓
+
 OUTCOME
 Guarantees
 ✔ Same input → identical output
