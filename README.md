@@ -1,119 +1,119 @@
-# 🔐 LCM — Verifiable Decision Layer for AI Systems
+🚀 LCM — Verifiable Decision Layer for AI Systems
 
-**AI decisions can be opaque.**  
-**But they must be provable.**
+AI decisions can act.
+LCM makes them provable.
 
----
+🧠 What is LCM?
 
-## What is LCM?
+LCM (Ledger Commit Machine) is a verification layer for AI systems.
 
-LCM is a deterministic verification layer that makes every AI decision:
+It ensures that every AI decision is:
 
-- Replayable  
-- Policy-bound  
-- Cryptographically provable  
+Deterministic
+Replayable
+Cryptographically provable
+⚠️ The Problem
 
-AI systems can act.  
-**LCM makes their decisions provable.**
+Modern AI systems:
 
----
+Make decisions you cannot reproduce
+Produce outputs you cannot verify
+Operate without accountability
 
-## ⚙️ Get Started
+This makes AI commerce, automation, and compliance fundamentally unsafe at scale.
 
-Run your first **provable AI decision** in seconds:
+✅ The Solution
 
-👉 https://www.lcm3.com/quickstart.html
-
-**What happens:**
-
-- ✔ Decision executes  
-- ✔ Cryptographic proof is sealed  
-- ✔ Result becomes replayable  
-
-> “If you can replay it, you can prove it.”
-
----
-
-## 🔒 How LCM Proves Decisions
-
+LCM introduces a deterministic commit layer:
 
 INPUT
 ├─ input_hash
 ├─ policy_hash
 └─ engine_version
 ↓
-DETERMINISTIC COMMIT
+DETERMINISTIC EXECUTION
 ↓
 DERIVATION ROOT
 ↓
 OUTCOME
-✔ SUCCESS
-✖ FAILURE
+Guarantees
+✔ Same input → identical output
+✔ Any change → instantly detected
+✔ Full replay → always possible
+✔ Decision → cryptographically sealed
+⚙️ Quickstart
 
----
+Run your first provable AI decision:
 
-**Guarantees:**
+👉 https://www.lcm3.com/quickstart.html
 
-- Same input → identical result  
-- Any change → instantly detectable  
-- Full replay → anytime  
+Flow
+Input a transaction
+Execute decision
+Seal cryptographic proof
+Replay & verify
+🧪 Sandbox
 
----
+Test isolated decision flows:
 
-## 🛒 LCM in AI Shopping
+👉 https://www.lcm3.com/sandbox.html
 
-An AI agent executes a purchase.  
-The transaction completes.  
+🔍 Explorer
 
-**But later — something is wrong.**
+Inspect derivation roots and proofs:
 
----
+👉 https://www.lcm3.com/explorer.html
 
-### Without LCM
+🛒 Real-World Example
+Without LCM
+Decision cannot be reproduced
+No proof of logic
+No accountability
+With LCM
+Replay the exact decision
+Verify deterministic execution
+Prove system behavior
 
-- You cannot explain why it happened  
-- You cannot reproduce the decision  
-- You cannot prove responsibility  
+If you can replay it, you can prove it.
 
----
+🧪 Validation
+✔ 74 / 74 tests passed
+✔ 300+ stress scenarios
+✔ Zero-drift replay
+✔ End-to-end verification
+🧭 Architecture
 
-### With LCM
+LCM sits between:
 
-- You replay the decision  
-- You verify the logic  
-- You prove what happened  
+AI Model → Decision Engine → LCM → Ledger → Replay
 
----
+It transforms:
 
-> A system that works is not enough.  
-> You need a system you can prove.
+👉 “AI output” → “provable decision artifact”
 
----
+💡 Why It Matters
 
-## 🧪 Proven in Real Conditions
+LCM does not make AI smarter.
 
-- ✔ 74/74 tests passed  
-- ✔ 300+ stress scenarios  
-- ✔ Zero-drift replay  
-- ✔ End-to-end audit verified  
+It makes AI:
 
-**This is not theoretical.**  
-**It is operational.**
+Accountable
+Auditable
+Defensible
 
----
+Without this layer:
 
-## 🔚 Bottom Line
+AI systems cannot be trusted in financial, legal, or autonomous domains.
 
-LCM does not make AI smarter.  
-**It makes decisions defensible.**
+🚀 Getting Started
+👉 Quickstart: https://www.lcm3.com/quickstart.html
+👉 Sandbox: https://www.lcm3.com/sandbox.html
+👉 Explorer: https://www.lcm3.com/explorer.html
+📌 Philosophy
 
-Without this,  
-**AI commerce cannot exist at scale.**
+A system that works is not enough.
+You need a system you can prove.
 
----
+⚡ One-Line Summary
 
-## 🚀 Try It
-
-- 👉 Sandbox: https://www.lcm3.com/sandbox.html  
-- 👉 Explorer: https://www.lcm3.com/explorer.html  
-- 👉 Use LCM API: https://www.lcm3.com/apply.html
+LCM turns AI decisions into verifiable, replayable, and provable artifacts.
