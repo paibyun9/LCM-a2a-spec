@@ -29,6 +29,7 @@ https://www.lcm3.com/quickstart.html
 
 ## How LCM Proves Decisions
 
+```
 INPUT
 ├─ input_hash
 ├─ policy_hash
@@ -47,11 +48,9 @@ DERIVATION ROOT
 OUTCOME
 ✔ SUCCESS
 ✖ FAILURE
-
-
-- Same input → identical result  
-- Any change → detected instantly  
-- Full replay → anytime  
+Same input → identical result
+Any change → detected instantly
+Full replay → anytime
 
 ---
 
