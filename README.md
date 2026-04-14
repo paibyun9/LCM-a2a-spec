@@ -51,7 +51,7 @@ OUTCOME
 Same input → identical result
 Any change → detected instantly
 Full replay → anytime
-
+``` 
 ---
 
 ## LCM in AI Systems
@@ -106,4 +106,4 @@ AI commerce cannot exist at scale.
 https://www.lcm3.com/sandbox.html  
 
 **Explorer**  
-https://www.lcm3.com/explorer.html
+https://www.lcm3.com/explorer.html  
