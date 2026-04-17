@@ -9,6 +9,9 @@ But they must be provable.
 
 AI systems can act.  
 LCM makes their decisions provable.
+
+---
+
 ⚖️ Patent Pending — KR 10-2026-0069797
 
 ---
