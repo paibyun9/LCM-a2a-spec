@@ -87,10 +87,15 @@ But later — something is wrong.
 - 74 / 74 tests passed  
 - 300+ stress scenarios  
 - Zero-drift replay  
-- End-to-end audit verified  
+- End-to-end audit verified
 
-This is not theoretical.  
+- Production-grade transaction traceability
+- Shopping and refund lifecycle tracking
+- Deterministic decision lineage from input to settlement
+  
+This is not theoretical.
 It is operational.
+It runs on real transactions.
 
 ---
 
